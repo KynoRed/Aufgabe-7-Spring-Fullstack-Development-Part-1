@@ -4,9 +4,12 @@ import at.itkollegimst.studentenverwaltung.domain.Student;
 import at.itkollegimst.studentenverwaltung.exceptions.StudentNichtGefunden;
 import at.itkollegimst.studentenverwaltung.repositories.DBZugriffStudenten;
 import at.itkollegimst.studentenverwaltung.repositories.DBZugriffStudentenJPA;
+import org.jspecify.annotations.Nullable;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class StudentenServiceImpl implements StudentenService{
 
     private DBZugriffStudenten dbZugriffStudenten;
@@ -39,5 +42,10 @@ public class StudentenServiceImpl implements StudentenService{
     public void studentLoeschenMitId(Long id) {
         this.dbZugriffStudenten.studentLoeschenMitId(id);
 
+    }
+
+    @Override
+    public @Nullable Student alleStudentenMitId(Long id) {
+        return null;
     }
 }
